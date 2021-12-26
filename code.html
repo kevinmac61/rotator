@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Kevin MacKenzie</title>
+    <title>ROTATOR: A Coding Project By Kevin MacKenzie</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
     <!-- NAV Section -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/img/logokm.png" width="45" height="45" alt="logo" class="d-inline-block align-text-center"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="/img/logokm.png" width="45" height="45" alt="logo" class="d-inline-block align-text-center"> ROTATOR</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/kevinmac61/rotator">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -50,22 +50,68 @@
     <!-- Main Section -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for ROTATOR</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // call helloWorld 
-                            function helloWorld() {
-                                alert(`Hello World`);
+                            function getString(){
+                                // make the alert invisible
+                                document.getElementById("alert").classList.add("invisible");
+                            
+                                // get the input from the form
+                                let initValue = document.getElementById("theString").value;
+                            
+                                let returnObj = checkForPalindrone(initValue);
+                                
+                                displayMessage(returnObj);
+                            }
+                            
+                            // check if a palindrone
+                            function checkForPalindrone(initValue) {
+                            
+                                // convert to lowercase
+                                initValue = initValue.toLowerCase();
+                                //remove any spaces and other special characters
+                                let regex = /[^a-z0-9]/gi;
+                                initValue = initValue.replace(regex, "");
+                            
+                                let revString = [];
+                                let returnObj = {};
+                            
+                                for (let index = initValue.length - 1; index >= 0; index--) {
+                                    revString += initValue[index];
+                                }
+                            
+                                if (revString == initValue){
+                                    returnObj.msg = "Well Done! You've entered a Palindrone.";
+                                }
+                                else {
+                                    returnObj.msg = "Sorry, you did not enter a Palindrone.";
+                                }
+                            
+                                returnObj.reversed = revString;
+                                return returnObj;
+                            }
+                            
+                            
+                            //display the message to screen
+                            function displayMessage(returnObj) {
+                                document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                                document.getElementById("msg").innerHTML = `Your phrase reversed is ${returnObj.reversed}`;
+                                // make the alert visible
+                                document.getElementById("alert").classList.remove("invisible");
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>helloWorld is a function that displays an alert with "Hello World".</p>
+                    <h5>ROTATOR</h5>
+                    <h4 class="lead">Palindrone check (aka ROTATOR) is an app that takes a user's input and checks to see if it is a Palindrone.</h4>
+                    <p>The code is structured in three functions. </p>
+                    <p>The first function getString() receives the input from the form and calls the checkForPalindrone() and displayMessage() functions.</p>
+                    <p>The next function checkForPalindrone() creates a new array by using a for/loop in reverse. It then compares the reversed string and the original input string.</p>
+                    <p>The last function displayMessage() displays the corresponding message result on the page based on whether or not the string was a palindrone.</p>
                 </div>
             </div>
         </div>
