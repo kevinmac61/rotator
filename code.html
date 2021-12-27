@@ -67,8 +67,8 @@
                                 displayMessage(returnObj);
                             }
                             
-                            // check if a palindrone
-                            function checkForPalindrone(initValue) {
+                            // check if a palindrome
+                            function checkForPalindrome(initValue) {
                             
                                 // convert to lowercase
                                 initValue = initValue.toLowerCase();
@@ -84,10 +84,10 @@
                                 }
                             
                                 if (revString == initValue){
-                                    returnObj.msg = "Well Done! You've entered a Palindrone.";
+                                    returnObj.msg = "Well Done! You've entered a Palindrome.";
                                 }
                                 else {
-                                    returnObj.msg = "Sorry, you did not enter a Palindrone.";
+                                    returnObj.msg = "Sorry, you did not enter a Palindrome.";
                                 }
                             
                                 returnObj.reversed = revString;
@@ -107,11 +107,11 @@
                 </div>
                 <div class="col-lg-4 mt-3">
                     <h5>ROTATOR</h5>
-                    <h4 class="lead">Palindrone check (aka ROTATOR) is an app that takes a user's input and checks to see if it is a Palindrone.</h4>
+                    <h4 class="lead">Palindrome check (aka ROTATOR) is an app that takes a user's input and checks to see if it is a Palindrome.</h4>
                     <p>The code is structured in three functions. </p>
-                    <p>The first function getString() receives the input from the form and calls the checkForPalindrone() and displayMessage() functions.</p>
-                    <p>The next function checkForPalindrone() creates a new array by using a for/loop in reverse. It then compares the reversed string and the original input string.</p>
-                    <p>The last function displayMessage() displays the corresponding message result on the page based on whether or not the string was a palindrone.</p>
+                    <p>The first function getString() receives the input from the form and calls the checkForPalindrome() and displayMessage() functions.</p>
+                    <p>The next function checkForPalindrome() creates a new array by using a for/loop in reverse. It then compares the reversed string and the original input string.</p>
+                    <p>The last function displayMessage() displays the corresponding message result on the page based on whether or not the string was a palindrome.</p>
                 </div>
             </div>
         </div>

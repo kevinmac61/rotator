@@ -5,13 +5,13 @@ function getString(){
     // get the input from the form
     let initValue = document.getElementById("theString").value;
 
-    let returnObj = checkForPalindrone(initValue);
+    let returnObj = checkForPalindrome(initValue);
     
     displayMessage(returnObj);
 }
 
-// check if a palindrone
-function checkForPalindrone(initValue) {
+    // check if a palindrome
+function checkForPalindrome(initValue) {
 
     // convert to lowercase
     initValue = initValue.toLowerCase();
@@ -27,10 +27,10 @@ function checkForPalindrone(initValue) {
     }
 
     if (revString == initValue){
-        returnObj.msg = "Well Done! You've entered a Palindrone.";
+        returnObj.msg = "Well Done! You've entered a Palindrome.";
     }
     else {
-        returnObj.msg = "Sorry, you did not enter a Palindrone.";
+        returnObj.msg = "Sorry, you did not enter a Palindrome.";
     }
 
     returnObj.reversed = revString;
